@@ -55,19 +55,19 @@ export const loginUser = asyncHandler(async (req, res)=>{
                 email: user.email,
                 id: user.id,
             },
-        }, process.env.JWT_SECRET, {expiresIn: "10m"});
+        }, process.env.JWT_SECRET, {expiresIn: "5m"});
         res.status(200).json({accessToken});
     }
    else{
     res.status(400);
     throw new Error ("email or Password is not valid");
    }
-   res.json({message: "Login user"});
 })
 
 //@desc current user info
 // @route GET /api/users/current
 // @Access private
 export const currentUser = asyncHandler(async (req, res)=>{
+    res.status(200).json("current")
 
 }) 
