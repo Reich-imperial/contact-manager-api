@@ -5,7 +5,7 @@ const userSchema =mongoose.Schema({
         type:String,
         required:[true, "Please provide the username"],
         maxLength:50,
-        minLength:3,
+        minLength:4,
     },
     email:{
         type:String,
